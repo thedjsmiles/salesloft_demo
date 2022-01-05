@@ -1,21 +1,87 @@
 
 version: 2
 
-models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+sources:
+  - name: stackoverflow_questions
+    database: bigquery-public-data
+    schema: stackoverflow
+    tables:
+      - name: posts_questions
+        columns:
+          - name: id
+          - name: title
+          - name: body
+          - name: accepted_answer_id
+          - name: answer_count
+          - name: comment_count
+          - name: community_owned_date
+          - name: creation_date
+          - name: favorite_count
+          - name: last_activity_date
+          - name: last_edit_date
+          - name: last_editor_display_name
+          - name: last_editor_user_id
+          - name: owner_display_name
+          - name: owner_user_id
+          - name: parent_id
+          - name: post_type_id
+          - name: score
+          - name: tags
+          - name: view_count
+      - name: users
+        columns:
+          - name: id
+          - name: display_name
+          - name: about_me
+          - name: age
+          - name: creation_date
+          - name: last_access_date
+          - name: location
+          - name: reputation
+          - name: up_votes
+          - name: down_votes
+          - name: views
+          - name: profile_image_url
+          - name: website_url
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+models:
+    - name: questions
+      description: "table containing unanswered questions in stackoverflow"
+      columns:
+          - name: id
+            tests:
+                - unique
+                - not_null
+          - name: title
+          - name: body
+          - name: creation_date
+          - name: tags
+          - name: view_count
+          - name: score
+          - name: owner_user_id
+          - name: display_name
+          - name: age
+          - name: reputation
+          - name: location
+          - name: pop_rnk
+          - name: trend_rnk
+    - name: questions_vw
+      description: "create read-only view of unanswered questions in stackoverflow"
+      columns:
+          - name: id
+            tests:
+                - unique
+                - not_null
+          - name: title
+          - name: body
+          - name: creation_date
+          - name: tags
+          - name: view_count
+          - name: score
+          - name: owner_user_id
+          - name: display_name
+          - name: age
+          - name: reputation
+          - name: location
+          - name: pop_rnk
+          - name: trend_rnk
