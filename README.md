@@ -1,15 +1,20 @@
-Welcome to your new dbt project!
+## Exercise Details
 
-### Using the starter project
+Stack Overflow is an open community for anyone that writes, reads, or reviews code. It helps members get answers to some of their toughest questions, share knowledge, and find their next dream job.
 
-Try running the following commands:
-- dbt run
-- dbt test
+In this exercise, we’d like to play the part of a Stack Overflow stakeholder asking a question of their data.
 
+> What questions are popular and trending, but not being answered?
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+To accomplish this - we’d like you to make use of the following tool set. These are either open source or have free trials
+
+* Google Big Query
+* dbt
+* Github
+* StackOverlow Data Set
+
+## Exercise Deliverables
+
+* A dbt project created, developed and tested to a standard you think a data consumer would expect in the time frame allotted. Stored in a public Github repository.
+* A Google BigQuery data set, populated with data from the stack overflow sample data set and modeled with dbt to answer the question posed above.
+* A data model diagram that provides a visual representation of your data model
